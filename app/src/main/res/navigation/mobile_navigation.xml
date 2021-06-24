@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.pettify.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_view_report"
+            app:destination="@id/view_report" />
+        <action
+            android:id="@+id/action_nav_home_self"
+            app:destination="@id/nav_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/reportslist_list"
+        android:name="com.pettify.ui.report.ReportListFragment"
+        android:label="Reports Feed"
+        tools:layout="@layout/fragment_report_list" >
+        <action
+            android:id="@+id/action_reportslist_list_to_view_report"
+            app:destination="@id/view_report" />
+        <action
+            android:id="@+id/action_reportslist_list_to_create_report"
+            app:destination="@id/create_report" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/create_report"
+        android:name="com.pettify.ui.report.CreateReportFragment"
+        android:label="Report"
+        tools:layout="@layout/fragment_create_report" >
+        <action
+            android:id="@+id/action_create_report_to_reportslist_list"
+            app:destination="@id/reportslist_list" />
+        <argument
+            android:name="reportId" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/view_report"
+        android:name="com.pettify.ui.report.ViewReportFragment"
+        android:label="View Report"
+        tools:layout="@layout/fragment_view_report" >
+        <argument
+            android:name="reportId"
+            android:defaultValue="@null" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_login"
+        android:name="com.pettify.ui.auth.LoginFragment"
+        android:label="@string/menu_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_nav_login_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_login_to_nav_register"
+            app:destination="@id/nav_register" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_register"
+        android:name="com.pettify.ui.auth.RegisterFragment"
+        android:label="@string/menu_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_nav_register_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/account_tab"
+        android:name="com.pettify.ui.auth.AccountFragment"
+        android:label="My Account"
+        tools:layout="@layout/fragment_account" />
+    <fragment
+        android:id="@+id/nav_new_chat"
+        android:name="com.pettify.ui.chat.ChatFragment"
+        android:label="Chat"
+        tools:layout="@layout/chat_fragment" /><![CDATA[
+        tools:layout="@layout/fragment_register" />
+
+
+
+
+]]>
+</navigation>
