@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.report.CreateReportFragment">
+
+        <TextView
+            android:id="@+id/create_report_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="Title"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/create_title_text"
+            android:layout_width="338dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:inputType="text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/create_report_title" />
+
+        <TextView
+            android:id="@+id/create_report_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="70dp"
+            android:text="Description"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/create_report_title" />
+
+        <EditText
+            android:id="@+id/create_desc_text"
+            android:layout_width="338dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:inputType="text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/create_report_desc" />
+
+        <TextView
+            android:id="@+id/create_report_animal_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="16dp"
+            android:text="Animal Type"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/create_report_address" />
+
+        <Spinner
+            android:id="@+id/animal_type_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="250dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/create_report_animal_type" />
+
+        <TextView
+            android:id="@+id/create_report_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="16dp"
+            android:text="Report Type"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/create_report_animal_type"
+            app:layout_constraintTop_toBottomOf="@+id/create_report_address" />
+
+        <Spinner
+            android:id="@+id/report_type_spinner"
+            android:layout_width="154dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="44dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.692"
+            app:layout_constraintStart_toEndOf="@+id/animal_type_spinner"
+            app:layout_constraintTop_toBottomOf="@+id/create_report_type" />
+
+        <TextView
+            android:id="@+id/create_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="16dp"
+            android:text="Address"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/create_desc_text" />
+
+        <EditText
+            android:id="@+id/create_report_address"
+            android:layout_width="344dp"
+            android:layout_height="41dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:inputType="text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/create_address" />
+
+        <Button
+            android:id="@+id/create_report_btn"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="70dp"
+            android:text="Submit"
+            app:backgroundTint="@color/purple_200"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.441"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/create_report_error_msg" />
+
+        <ImageView
+            android:id="@+id/create_image_ph"
+            android:layout_width="159dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="12dp"
+            tools:src="@drawable/images"
+            app:layout_constraintStart_toEndOf="@+id/create_add_images"
+            app:layout_constraintTop_toBottomOf="@+id/report_type_spinner" />
+
+        <Button
+            android:id="@+id/create_add_images"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:text="Upload Image"
+            android:textSize="14sp"
+            app:backgroundTint="#90BB86FC"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/animal_type_spinner" />
+
+        <TextView
+            android:id="@+id/create_report_error_msg"
+            android:layout_width="250dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="16dp"
+            android:text="all fields should be provided!"
+            android:textColor="#FF0000"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.558"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/create_image_ph"
+            tools:visibility="invisible" />
+
+        <ProgressBar
+            android:id="@+id/create_report_pb"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="110dp"
+            android:scaleX="0.7"
+            android:scaleY="0.7"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/create_report_btn"
+            app:layout_constraintStart_toStartOf="@+id/create_report_btn"
+            app:layout_constraintTop_toTopOf="@+id/create_report_btn" />
+
+        <ProgressBar
+            android:id="@+id/create_report_image_pb"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/create_image_ph"
+            app:layout_constraintEnd_toEndOf="@+id/create_image_ph"
+            app:layout_constraintStart_toStartOf="@+id/create_image_ph"
+            app:layout_constraintTop_toTopOf="@+id/create_image_ph"
+            app:layout_constraintTop_toBottomOf="@+id/create_image_ph"
+            android:elevation="2dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
